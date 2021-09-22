@@ -16,9 +16,12 @@ elif(user_calculation_choice == 2):
     result = subtraction.subtract_calculation(user_num_one, user_num_two)
 elif(user_calculation_choice == 3):
     result = multiplication.multiply_calculation(user_num_one, user_num_two)
-elif(user_calculation_choice == 4):
+try:
+    if(user_calculation_choice == 4):
+        result = division.divide_calculation(user_num_one, user_num_two)
+except ZeroDivisionError:
+    user_num_two = int(input("Cant accept 0 , please enter a new second number: "))
     result = division.divide_calculation(user_num_one, user_num_two)
 print("Your result is : " +str(result))
-
 
 
